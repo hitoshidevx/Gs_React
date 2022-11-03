@@ -39,20 +39,21 @@ export default function Login() {
 
     const loginFrame = {
         margin: 0,
-        padding: 80,
+        padding: 40,
         fontSize: 50,
         color: 'white',
         fontFamily: 'Montserrat',
         backgroundColor: "#4CC05F"
     }
-
+    
     const textoFrame = {
-        marginTop : 100
+        marginTop : 100,
+        marginLeft: 200
     }
 
     const divForm = {
         marginTop: 50,
-        marginLeft: 80
+        marginLeft: 250
     }
 
     const divUsuario = {

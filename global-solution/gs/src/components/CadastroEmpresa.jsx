@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export default function CadastroPessoa() {
-  
-    const cadastroPessoaFrame = {
+export default function CadastroEmpresa() {
+
+    const cadastroEmpresaFrame = {
         margin: 0,
         padding: 40,
         fontSize: 50,
         color: 'white',
         fontFamily: 'Montserrat',
-        backgroundColor: "#D96E6E"
+        backgroundColor: "#D96EAE"
     }
 
     const textoFrame = {
@@ -55,7 +55,7 @@ export default function CadastroPessoa() {
         marginTop: 40,
         width: 130,
         height: 50,
-        backgroundColor: '#D96E6E',
+        backgroundColor: '#D96EAE',
         color: 'white',
         fontFamily: 'Montserrat',
         fontSize: 20,
@@ -63,14 +63,14 @@ export default function CadastroPessoa() {
         borderRadius: 10,
         cursor: 'pointer'
     }
-    
+
     let { id } = useParams()
 
     const [ novo, setNovo ] = useState({
         codigo: id,
-        nomePessoa:"",
-        sobreMim:"",
-        rgPessoa:""
+        nomeEmpresa:"",
+        sobreEmpresa:"",
+        cnpjEmpresa:""
     })
 
     let metodo = "post"
@@ -86,65 +86,64 @@ export default function CadastroPessoa() {
     const handleSubmit = e =>{
         e.preventDefault()
 
-        fetch(`http://localhost:8080/GsAPI/rest/pessoa/${id ? id : ""}`,{
+        fetch(`http://localhost:8080/GsAPI/rest/empresa/${id ? id : ""}`,{
             method: metodo,
             headers:{
                 "Content-Type":"application/json"
             },
             body: JSON.stringify(novo)
         }).then(()=>{
-            window.location = "/listapessoa"
+            window.location = "/listaempresa"
         })
     }
 
     useEffect(()=>{
-        if(id){
-            fetch(`http://localhost:8080/GsAPI/rest/pessoa/${id}`)
-            .then((resp)=>{
-                return(resp.json())
-            }).then(data=>{
-                setNovo(data)
-            })
-        }
-    },[id])
+      if(id){
+          fetch(`http://localhost:8080/GsAPI/rest/empresa/${id}`)
+          .then((resp)=>{
+              return(resp.json())
+          }).then(data=>{
+              setNovo(data)
+          })
+      }
+  },[id])
 
-
-    return(
-      <div>
-          <div id="loginFrame" style={cadastroPessoaFrame}>
-              <h2 style={textoFrame} >Cadastro de Pessoa</h2>
+  return (
+    <div>
+          <div id="loginFrame" style={cadastroEmpresaFrame}>
+              <h2 style={textoFrame} >Cadastro de Empresa</h2>
           </div>
           <div style={divForm}>
               <form onSubmit={handleSubmit}>
                   <div style={divLabel} >
-                      <label htmlFor="">Nome</label>
+                      <label htmlFor="">Nome da Empresa</label>
                       <input 
                           type="text"
-                          name="nomePessoa"
-                          id="idNomePessoa"
-                          value={novo.nomePessoa}
+                          name="nomeEmpresa"
+                          id="idNomeEmpresa"
+                          value={novo.nomeEmpresa}
                           style={inputs}
                           onChange={handleChange}
                       />
                   </div>
                   <div style={divLabel2}>
-                  <label htmlFor="">Sobre Mim</label>
+                  <label htmlFor="">Sobre a Empresa</label>
                       <input 
                           type="text"
-                          name="sobreMim"
-                          id="idSobreMim"
-                          value={novo.sobreMim}
+                          name="sobreEmpresa"
+                          id="idSobreEmpresa"
+                          value={novo.sobreEmpresa}
                           style={inputs}
                           onChange={handleChange}
                       />
                   </div>
                   <div style={divLabel2}>
-                  <label htmlFor="">RG</label>
+                  <label htmlFor="">CNPJ</label>
                       <input 
                           type="text"
-                          name="rgPessoa"
-                          id="idRg"
-                          value={novo.rgPessoa}
+                          name="cnpjEmpresa"
+                          id="idCnpj"
+                          value={novo.cnpjEmpresa}
                           style={inputs}
                           onChange={handleChange}
                       />
