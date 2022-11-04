@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-// import { Container } from './styles';
+import { ButtonOk, DivForm, DivLabel, DivLabelBelow, InputsForm, TextoFrame, UpperFrame } from '../style/styled';
 
 export default function Login() {
 
@@ -37,101 +36,38 @@ export default function Login() {
         }
     }
 
-    const loginFrame = {
-        margin: 0,
-        padding: 40,
-        fontSize: 50,
-        color: 'white',
-        fontFamily: 'Montserrat',
-        backgroundColor: "#4CC05F"
-    }
-    
-    const textoFrame = {
-        marginTop : 100,
-        marginLeft: 200
-    }
-
-    const divForm = {
-        marginTop: 50,
-        marginLeft: 250
-    }
-
-    const divUsuario = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464'
-    }
-
-    const inputs = {
-        width: 800,
-        height: 35,
-        backgroundColor: '#D9D9D9',
-        textDecoration: 'none',
-        border: 'none',
-        boxShadow: 'none',
-        outline: 'none',
-        paddingLeft: 15,
-        fontFamily: 'Montserrat'
-    }
-
-    const divSenha = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464',
-        marginTop: 40
-    }
-
-    const buttonOk = {
-        marginTop: 40,
-        width: 130,
-        height: 50,
-        backgroundColor: '#4CC05F',
-        color: 'white',
-        fontFamily: 'Montserrat',
-        fontSize: 20,
-        border: 'none',
-        borderRadius: 10,
-        cursor: 'pointer'
-    }
-
   return(
     <div>
-        <div id="loginFrame" style={loginFrame}>
-            <h2 style={textoFrame} >Login</h2>
-        </div>
-        <div style={divForm}>
+        <UpperFrame id="loginFrame" >
+            <TextoFrame>Login</TextoFrame>
+        </UpperFrame>
+        <DivForm>
             <form onSubmit={logar}>
-                <div style={divUsuario} >
+                <DivLabel >
                     <label htmlFor="idLogin">Usuário</label>
-                    <input 
+                    <InputsForm 
                         type="text"
                         name="login"
                         id="idLogin"
                         value={usuario.login}
-                        style={inputs}
                         onChange={handleChange}
                     />
-                </div>
-                <div style={divSenha}>
+                </DivLabel>
+                <DivLabelBelow>
                 <label htmlFor="idSenha">Senha</label>
-                    <input 
+                    <InputsForm 
                         type="password"
                         name="senha"
                         id="idSenha"
                         value={usuario.senha}
-                        style={inputs}
                         onChange={handleChange}
                     />
-                </div>
+                </DivLabelBelow>
                 <div>
-                    <button style={buttonOk}>Logar!</button>
+                    <ButtonOk >Logar!</ButtonOk>
                 </div>
             </form>
-        </div>
+        </DivForm>
     </div>
   )
 }

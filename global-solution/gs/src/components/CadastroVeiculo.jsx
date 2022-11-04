@@ -1,68 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import {  ButtonOkVeiculo, DivForm, DivLabel, DivLabelBelow, InputsForm, VeiculoFrame } from '../style/styled';
 
 export default function CadastroVeiculo() {
-    
-    const cadastroVeiculoFrame = {
-        margin: 0,
-        padding: 40,
-        fontSize: 50,
-        color: 'white',
-        fontFamily: 'Montserrat',
-        backgroundColor: "#6EC6D9"
-    }
-
-    const textoFrame = {
-        marginTop : 100,
-        marginLeft: 200
-    }
-
-    const divForm = {
-        marginTop: 50,
-        marginLeft: 250
-    }
-
-    const divLabel = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464'
-    }
-
-    const divLabel2 = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464',
-        marginTop: 40
-    }
-
-    const inputs = {
-        width: 800,
-        height: 35,
-        backgroundColor: '#D9D9D9',
-        textDecoration: 'none',
-        border: 'none',
-        boxShadow: 'none',
-        outline: 'none',
-        paddingLeft: 15,
-        fontFamily: 'Montserrat'
-    }
-
-    const buttonOk = {
-        marginTop: 40,
-        width: 130,
-        height: 50,
-        backgroundColor: '#6EC6D9',
-        color: 'white',
-        fontFamily: 'Montserrat',
-        fontSize: 20,
-        border: 'none',
-        borderRadius: 10,
-        cursor: 'pointer'
-    }
 
     let { id } = useParams()
 
@@ -110,49 +50,46 @@ export default function CadastroVeiculo() {
 
   return (
     <div>
-        <div id="loginFrame" style={cadastroVeiculoFrame}>
-            <h2 style={textoFrame} >Cadastro de Veiculo</h2>
-        </div>
-        <div style={divForm}>
+        <VeiculoFrame id="loginFrame">
+            <h2 >Cadastro de Veiculo</h2>
+        </VeiculoFrame>
+        <DivForm>
             <form onSubmit={handleSubmit}>
-                <div style={divLabel} >
+                <DivLabel  >
                     <label htmlFor="">Modelo do Veículo</label>
-                    <input 
+                    <InputsForm 
                         type="text"
                         name="nomeVeiculo"
                         id="idModelo"
                         value={novo.nomeVeiculo}
-                        style={inputs}
                         onChange={handleChange}
                     />
-                </div>
-                <div style={divLabel2}>
+                </DivLabel>
+                <DivLabelBelow >
                 <label htmlFor="">Sobre o Veículo</label>
-                    <input 
+                    <InputsForm 
                         type="text"
                         name="sobreVeiculo"
                         id="idSobreVeiculo"
                         value={novo.sobreVeiculo}
-                        style={inputs}
                         onChange={handleChange}
                     />
-                </div>
-                <div style={divLabel2}>
+                </DivLabelBelow>
+                <DivLabelBelow >
                 <label htmlFor="">Placa do Veículo</label>
-                    <input 
+                    <InputsForm 
                         type="text"
                         name="placaVeiculo"
                         id="idPlacaVeiculo"
                         value={novo.placaVeiculo}
-                        style={inputs}
                         onChange={handleChange}
                     />
-                </div>
+                </DivLabelBelow>
                 <div>
-                    <button style={buttonOk}>Go!</button>
+                    <ButtonOkVeiculo >Go!</ButtonOkVeiculo>
                 </div>
             </form>
-        </div>
+        </DivForm>
     </div>
   )
 }

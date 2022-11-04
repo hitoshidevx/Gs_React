@@ -1,69 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ButtonOkPessoa, PessoaFrame, DivForm, DivLabel, DivLabelBelow, InputsForm } from '../style/styled';
 
 export default function CadastroPessoa() {
   
-    const cadastroPessoaFrame = {
-        margin: 0,
-        padding: 40,
-        fontSize: 50,
-        color: 'white',
-        fontFamily: 'Montserrat',
-        backgroundColor: "#D96E6E"
-    }
-
-    const textoFrame = {
-        marginTop : 100,
-        marginLeft: 200
-    }
-
-    const divForm = {
-        marginTop: 50,
-        marginLeft: 250
-    }
-
-    const divLabel = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464'
-    }
-
-    const divLabel2 = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464',
-        marginTop: 40
-    }
-
-    const inputs = {
-        width: 800,
-        height: 35,
-        backgroundColor: '#D9D9D9',
-        textDecoration: 'none',
-        border: 'none',
-        boxShadow: 'none',
-        outline: 'none',
-        paddingLeft: 15,
-        fontFamily: 'Montserrat'
-    }
-
-    const buttonOk = {
-        marginTop: 40,
-        width: 130,
-        height: 50,
-        backgroundColor: '#D96E6E',
-        color: 'white',
-        fontFamily: 'Montserrat',
-        fontSize: 20,
-        border: 'none',
-        borderRadius: 10,
-        cursor: 'pointer'
-    }
-    
     let { id } = useParams()
 
     const [ novo, setNovo ] = useState({
@@ -111,49 +51,46 @@ export default function CadastroPessoa() {
 
     return(
       <div>
-          <div id="loginFrame" style={cadastroPessoaFrame}>
-              <h2 style={textoFrame} >Cadastro de Pessoa</h2>
-          </div>
-          <div style={divForm}>
+          <PessoaFrame id="loginFrame" >
+              <h2>Cadastro de Pessoa</h2>
+          </PessoaFrame>
+          <DivForm>
               <form onSubmit={handleSubmit}>
-                  <div style={divLabel} >
+                  <DivLabel>
                       <label htmlFor="">Nome</label>
-                      <input 
+                      <InputsForm 
                           type="text"
                           name="nomePessoa"
                           id="idNomePessoa"
                           value={novo.nomePessoa}
-                          style={inputs}
                           onChange={handleChange}
                       />
-                  </div>
-                  <div style={divLabel2}>
+                  </DivLabel>
+                  <DivLabelBelow>
                   <label htmlFor="">Sobre Mim</label>
-                      <input 
+                      <InputsForm 
                           type="text"
                           name="sobreMim"
                           id="idSobreMim"
                           value={novo.sobreMim}
-                          style={inputs}
                           onChange={handleChange}
                       />
-                  </div>
-                  <div style={divLabel2}>
+                  </DivLabelBelow>
+                  <DivLabelBelow>
                   <label htmlFor="">RG</label>
-                      <input 
+                      <InputsForm 
                           type="text"
                           name="rgPessoa"
                           id="idRg"
                           value={novo.rgPessoa}
-                          style={inputs}
                           onChange={handleChange}
                       />
-                  </div>
+                  </DivLabelBelow>
                   <div>
-                      <button style={buttonOk}>Go!</button>
+                      <ButtonOkPessoa >Go!</ButtonOkPessoa>
                   </div>
               </form>
-          </div>
-      </div>
+          </DivForm>
+        </div>
   )
 }

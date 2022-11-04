@@ -1,68 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ButtonOkEmpresa, DivForm, DivLabel, DivLabelBelow, EmpresaFrame, InputsForm } from '../style/styled';
 
 export default function CadastroEmpresa() {
-
-    const cadastroEmpresaFrame = {
-        margin: 0,
-        padding: 40,
-        fontSize: 50,
-        color: 'white',
-        fontFamily: 'Montserrat',
-        backgroundColor: "#D96EAE"
-    }
-
-    const textoFrame = {
-        marginTop : 100,
-        marginLeft: 200
-    }
-
-    const divForm = {
-        marginTop: 50,
-        marginLeft: 250
-    }
-
-    const divLabel = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464'
-    }
-
-    const divLabel2 = {
-        display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Montserrat',
-        fontSize: 35,
-        color: '#6B6464',
-        marginTop: 40
-    }
-
-    const inputs = {
-        width: 800,
-        height: 35,
-        backgroundColor: '#D9D9D9',
-        textDecoration: 'none',
-        border: 'none',
-        boxShadow: 'none',
-        outline: 'none',
-        paddingLeft: 15,
-        fontFamily: 'Montserrat'
-    }
-
-    const buttonOk = {
-        marginTop: 40,
-        width: 130,
-        height: 50,
-        backgroundColor: '#D96EAE',
-        color: 'white',
-        fontFamily: 'Montserrat',
-        fontSize: 20,
-        border: 'none',
-        borderRadius: 10,
-        cursor: 'pointer'
-    }
 
     let { id } = useParams()
 
@@ -110,49 +50,46 @@ export default function CadastroEmpresa() {
 
   return (
     <div>
-          <div id="loginFrame" style={cadastroEmpresaFrame}>
-              <h2 style={textoFrame} >Cadastro de Empresa</h2>
-          </div>
-          <div style={divForm}>
+          <EmpresaFrame id="loginFrame">
+              <h2>Cadastro de Empresa</h2>
+          </EmpresaFrame>
+          <DivForm>
               <form onSubmit={handleSubmit}>
-                  <div style={divLabel} >
+                  <DivLabel >
                       <label htmlFor="">Nome da Empresa</label>
-                      <input 
+                      <InputsForm 
                           type="text"
                           name="nomeEmpresa"
                           id="idNomeEmpresa"
                           value={novo.nomeEmpresa}
-                          style={inputs}
                           onChange={handleChange}
                       />
-                  </div>
-                  <div style={divLabel2}>
+                  </DivLabel>
+                  <DivLabelBelow >
                   <label htmlFor="">Sobre a Empresa</label>
-                      <input 
+                      <InputsForm 
                           type="text"
                           name="sobreEmpresa"
                           id="idSobreEmpresa"
                           value={novo.sobreEmpresa}
-                          style={inputs}
                           onChange={handleChange}
                       />
-                  </div>
-                  <div style={divLabel2}>
+                  </DivLabelBelow>
+                  <DivLabelBelow >
                   <label htmlFor="">CNPJ</label>
-                      <input 
+                      <InputsForm 
                           type="text"
                           name="cnpjEmpresa"
                           id="idCnpj"
                           value={novo.cnpjEmpresa}
-                          style={inputs}
                           onChange={handleChange}
                       />
-                  </div>
+                  </DivLabelBelow>
                   <div>
-                      <button style={buttonOk}>Go!</button>
+                      <ButtonOkEmpresa >Go!</ButtonOkEmpresa>
                   </div>
               </form>
-          </div>
+          </DivForm>
       </div>
   )
 }
