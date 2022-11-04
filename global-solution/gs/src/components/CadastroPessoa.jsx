@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ButtonOkPessoa, PessoaFrame, DivForm, DivLabel, DivLabelBelow, InputsForm } from '../style/styled';
+import { ButtonOkPessoa, PessoaFrame, DivForm, DivLabel, DivLabelBelow, InputsForm, ButtonBack, ButtonListPessoa } from '../style/styled';
 
 export default function CadastroPessoa() {
   
@@ -26,7 +26,7 @@ export default function CadastroPessoa() {
     const handleSubmit = e =>{
         e.preventDefault()
 
-        fetch(`http://localhost:8080/GsAPI/rest/pessoa/${id ? id : ""}`,{
+        fetch(`https://gs-1tdsr.herokuapp.com/rest/pessoa/${id ? id : ""}`,{
             method: metodo,
             headers:{
                 "Content-Type":"application/json"
@@ -39,7 +39,7 @@ export default function CadastroPessoa() {
 
     useEffect(()=>{
         if(id){
-            fetch(`http://localhost:8080/GsAPI/rest/pessoa/${id}`)
+            fetch(`https://gs-1tdsr.herokuapp.com/rest/${id}`)
             .then((resp)=>{
                 return(resp.json())
             }).then(data=>{
@@ -88,6 +88,8 @@ export default function CadastroPessoa() {
                   </DivLabelBelow>
                   <div>
                       <ButtonOkPessoa >Go!</ButtonOkPessoa>
+                      <ButtonListPessoa to="/listapessoa" >Lista de Pessoas</ButtonListPessoa>
+                      <ButtonBack to="/home" >Voltar</ButtonBack>
                   </div>
               </form>
           </DivForm>

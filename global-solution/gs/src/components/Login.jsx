@@ -22,7 +22,7 @@ export default function Login() {
         }
 
         const response = await fetch(
-            "http://localhost:8080/GsAPI/rest/login/",
+            "https://gs-1tdsr.herokuapp.com/rest/login/",
             requestOptions
         )
         

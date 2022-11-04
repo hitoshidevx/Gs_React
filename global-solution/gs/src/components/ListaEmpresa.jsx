@@ -6,7 +6,7 @@ export default function ListaEmpresa() {
   const [empresas, setEmpresas] = useState([])
 
     useEffect(()=>{
-      fetch("http://localhost:8080/GsAPI/rest/empresa").then((resp)=>{
+      fetch("https://gs-1tdsr.herokuapp.com/rest/empresa").then((resp)=>{
           return resp.json();
       }).then((resp)=>{
           setEmpresas(resp)
@@ -17,7 +17,7 @@ export default function ListaEmpresa() {
   },[])
 
   const handleDelete = (id)=>{
-      fetch(`http://localhost:8080/GsAPI/rest/empresa/${id}`,{
+      fetch(`https://gs-1tdsr.herokuapp.com/rest/empresa/${id}`,{
           method:"delete"
       }).then(()=>{
           window.location = "/listaempresa"
@@ -38,7 +38,7 @@ export default function ListaEmpresa() {
               <h3>{empresa.sobreEmpresa}</h3>
               <h3>{empresa.cnpjEmpresa}</h3>
               <div>
-                <EditButton >Editar</EditButton>
+                <EditButton to={`/editarempresa/${empresa.codigo}`} >Editar</EditButton>
                 <DeleteButton onClick={handleDelete.bind(this, empresa.codigo)} >Excluir</DeleteButton>
               </div>
             </Card>

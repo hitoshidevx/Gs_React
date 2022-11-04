@@ -18,12 +18,15 @@ export default function MainRoutes() {
       <Route path="/home" element={<Home />} />
 
       <Route path="/cadastropessoa" element={<CadastroPessoa />} />
+      <Route path="/editarpessoa/:id" element={<CadastroPessoa />} />
       <Route path="/listapessoa" element={<ListaPessoa />} />
       
       <Route path="/cadastroempresa" element={<CadastroEmpresa />} />
+      <Route path="/editarempresa/:id" element={<CadastroEmpresa />} />
       <Route path="/listaempresa" element={<ListaEmpresa />} />
 
       <Route path="/cadastroveiculo" element={<CadastroVeiculo />} />
+      <Route path="/editarveiculo/:id" element={<CadastroVeiculo />} />
       <Route path="/listaveiculo" element={<ListaVeiculo />} />
 
     </Routes>

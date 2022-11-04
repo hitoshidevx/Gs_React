@@ -51,7 +51,7 @@ export const InputsForm = styled.input`
 `
 export const ButtonOk = styled.button`
     margin-top: 40px;
-    width: 130px;
+    width: 100px;
     height: 50px;
     background-color: #4CC05F;
     color: #fff;
@@ -60,6 +60,23 @@ export const ButtonOk = styled.button`
     border: none;
     border-radius: 10px;
     cursor: pointer;
+`
+
+export const ButtonBack = styled(Link)`
+    margin-top: 40px;
+    margin-left: 30px;
+    padding: 15px;
+    background-color: #915050;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        background-color: #6c3232;
+    }
 `
 
 export const DeleteButton = styled.button`
@@ -75,7 +92,17 @@ export const DeleteButton = styled.button`
     cursor: pointer;
 `
 
-export const EditButton = styled(DeleteButton)`
+export const EditButton = styled(Link)`
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    width: 50%;
+    background-color: #D96E6E;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
     background-color: #CFA464;
 `
 
@@ -115,13 +142,22 @@ export const ResetLink = styled(Link)`
 `
 
 export const ResetLinkPerson = styled(ResetLink)`
-    background-color: #D96E6E
+    background-color: #D96E6E;
+    &:hover {
+        background-color: #e04f4f
+    }
 `
 export const ResetLinkCompany = styled(ResetLink)`
-    background-color: #D96EAE
+    background-color: #D96EAE;
+    &:hover {
+        background-color: #bb448b
+    }
 `
 export const ResetLinkVehicle = styled(ResetLink)`
-    background-color: #6EC6D9
+    background-color: #6EC6D9;
+    &:hover {
+        background-color: #4c9fb1
+    }
 `
 
 // --------------- Cadastro de Pessoa ----------------
@@ -130,7 +166,16 @@ export const PessoaFrame = styled(UpperFrame)`
     background-color: #D96E6E;
 `
 export const ButtonOkPessoa = styled(ButtonOk)`
-    background-color: #D96E6E
+    background-color: #D96E6E;
+    &:hover {
+        background-color: #c04b4b
+    }
+`
+export const ButtonListPessoa = styled(ButtonBack)`
+    background-color: #c04b4b;
+    &:hover {
+        background-color: #9f2d2d
+    }
 `
 
 // --------------- Cadastro de Empresa ----------------
@@ -141,7 +186,17 @@ export const EmpresaFrame = styled(UpperFrame)`
 `
 
 export const ButtonOkEmpresa = styled(ButtonOk)`
-    background-color: #D96EAE
+    background-color: #D96EAE;
+    &:hover {
+        background-color: #b1558c
+    }
+`
+
+export const ButtonListEmpresa = styled(ButtonBack)`
+    background-color: #b1558c;
+    &:hover {
+        background-color: #9e4078
+    }
 `
 
 // --------------- Cadastro de Veículo ----------------
@@ -152,7 +207,16 @@ export const VeiculoFrame = styled(UpperFrame)`
 `
 
 export const ButtonOkVeiculo = styled(ButtonOk)`
-    background-color: #6EC6D9
+    background-color: #6EC6D9;
+    &:hover {
+        background-color: #34a9c3;
+    }
+`
+export const ButtonListVeiculo = styled(ButtonBack)`
+    background-color: #34a9c3;
+    &:hover {
+        background-color: #2c8a9f;
+    }
 `
 
 // --------------- LISTAS ----------------

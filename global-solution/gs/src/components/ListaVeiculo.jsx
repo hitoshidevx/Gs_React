@@ -6,7 +6,7 @@ export default function ListaVeiculo() {
   const [veiculos, setVeiculos] = useState([])
 
     useEffect(()=>{
-      fetch("http://localhost:8080/GsAPI/rest/veiculo").then((resp)=>{
+      fetch("https://gs-1tdsr.herokuapp.com/rest/veiculo").then((resp)=>{
           return resp.json();
       }).then((resp)=>{
           setVeiculos(resp)
@@ -17,7 +17,7 @@ export default function ListaVeiculo() {
   },[])
 
   const handleDelete = (id)=>{
-      fetch(`http://localhost:8080/GsAPI/rest/veiculo/${id}`,{
+      fetch(`https://gs-1tdsr.herokuapp.com/rest/veiculo/${id}`,{
           method:"delete"
       }).then(()=>{
           window.location = "/listaveiculo"
@@ -39,7 +39,7 @@ export default function ListaVeiculo() {
               <h3>{veiculo.sobreVeiculo}</h3>
               <h3>{veiculo.placaVeiculo}</h3>
               <div>
-                <EditButton >Editar</EditButton>
+                <EditButton to={`/editarveiculo/${veiculo.codigo}`} >Editar</EditButton>
                 <DeleteButton onClick={handleDelete.bind(this, veiculo.codigo)} >Excluir</DeleteButton>
               </div>
             </Card>
