@@ -16,7 +16,7 @@ export default function Home() {
         </UpperFrame>
 
         <div>
-            <Chooseh3 >Olá {usuario}! Escolha um tipo de cadastro:</Chooseh3>
+            <Chooseh3 >Olá {usuario}! Escolha um tipo de entidade:</Chooseh3>
 
             <AllSignUps id="allSignUps" >
                 <SingularSignUp id="person" >

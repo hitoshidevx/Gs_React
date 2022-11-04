@@ -88,7 +88,7 @@ export default function CadastroPessoa() {
                   </DivLabelBelow>
                   <div>
                       <ButtonOkPessoa >Go!</ButtonOkPessoa>
-                      <ButtonListPessoa to="/listapessoa" >Lista de Pessoas</ButtonListPessoa>
+                      <ButtonListPessoa to="/listapessoa" >Ver Lista de Pessoas</ButtonListPessoa>
                       <ButtonBack to="/home" >Voltar</ButtonBack>
                   </div>
               </form>

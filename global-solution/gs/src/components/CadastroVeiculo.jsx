@@ -87,7 +87,7 @@ export default function CadastroVeiculo() {
                 </DivLabelBelow>
                 <div>
                     <ButtonOkVeiculo >Go!</ButtonOkVeiculo>
-                    <ButtonListVeiculo to="/listaveiculo" >Lista de Veículos</ButtonListVeiculo>
+                    <ButtonListVeiculo to="/listaveiculo" >Ver Lista de Veículos</ButtonListVeiculo>
                     <ButtonBack to="/home" >Voltar</ButtonBack>
                 </div>
             </form>

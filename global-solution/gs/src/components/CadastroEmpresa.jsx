@@ -87,7 +87,7 @@ export default function CadastroEmpresa() {
                   </DivLabelBelow>
                   <div>
                       <ButtonOkEmpresa >Go!</ButtonOkEmpresa>
-                      <ButtonListEmpresa to="/listaempresa" >Lista de Empresas</ButtonListEmpresa>
+                      <ButtonListEmpresa to="/listaempresa" >Ver Lista de Empresas</ButtonListEmpresa>
                       <ButtonBack to="/home" >Voltar</ButtonBack>
                   </div>
               </form>
