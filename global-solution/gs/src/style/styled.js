@@ -222,9 +222,10 @@ export const ButtonListVeiculo = styled(ButtonBack)`
 // --------------- LISTAS ----------------
 
 export const Divisor = styled.div`
+    width: 80%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 10vw;    
 `
 
 export const Card = styled.div`
@@ -236,4 +237,5 @@ export const Card = styled.div`
     color: #6B6464;
     font-size: 20px;
     margin-top: 100px;
+    margin-left: 80px;
 `
