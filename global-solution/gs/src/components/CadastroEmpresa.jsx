@@ -54,7 +54,7 @@ export default function CadastroEmpresa() {
               <h2>Cadastro de Empresa</h2>
           </EmpresaFrame>
           <DivForm>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} autoComplete="off" >
                   <DivLabel >
                       <label htmlFor="">Nome da Empresa</label>
                       <InputsForm 

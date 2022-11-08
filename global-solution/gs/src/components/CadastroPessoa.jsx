@@ -55,7 +55,7 @@ export default function CadastroPessoa() {
               <h2>Cadastro de Pessoa</h2>
           </PessoaFrame>
           <DivForm>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} autoComplete="off" >
                   <DivLabel>
                       <label htmlFor="">Nome</label>
                       <InputsForm 

@@ -42,7 +42,7 @@ export default function Login() {
             <TextoFrame>Login</TextoFrame>
         </UpperFrame>
         <DivForm>
-            <form onSubmit={logar}>
+            <form onSubmit={logar} autoComplete="off" >
                 <DivLabel >
                     <label htmlFor="idLogin">Usuário</label>
                     <InputsForm 

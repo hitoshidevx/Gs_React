@@ -54,7 +54,7 @@ export default function CadastroVeiculo() {
             <h2 >Cadastro de Veiculo</h2>
         </VeiculoFrame>
         <DivForm>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} autoComplete="off" >
                 <DivLabel  >
                     <label htmlFor="">Modelo do Veículo</label>
                     <InputsForm 
