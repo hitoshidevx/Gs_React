@@ -3,6 +3,14 @@
 ## Sobre o Projeto: 
 Nosso projeto contempla o CRUD de 3 entidades: Pessoa, Empresa e Veículo. Além da funcionalidade de Login e uma Tela Home para escolha das entidades.
 
+#### Integrantes: 
+- Gabriel Hitoshi - RM93442
+- Gustavo Maio - RM93211
+- Lucas Antunes - RM95781
+- Nickolas Kenji - RM95281
+- Rhayan Bembem - RM95043
+- Rodrigo Costa - RM93872
+
 ## 📁 Acesso ao projeto
 Rodar nosso projeto é extremamente simples! É só seguir esses passos:
 - Clonar esse repositório em sua máquina local
