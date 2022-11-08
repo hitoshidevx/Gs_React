@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ButtonOk, DivForm, DivLabel, DivLabelBelow, InputsForm, TextoFrame, UpperFrame } from '../style/styled';
+import Footer from './Footer';
 
 export default function Login() {
 
@@ -68,6 +69,8 @@ export default function Login() {
                 </div>
             </form>
         </DivForm>
+        
+        <Footer />
     </div>
   )
 }

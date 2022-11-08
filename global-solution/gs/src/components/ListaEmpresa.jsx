@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Card, DeleteButton, Divisor, EditButton, EmpresaFrame } from '../style/styled';
+import { ButtonBackList, Card, DeleteButton, Divisor, EditButton, EmpresaFrame, InputButtonDiv, InputList, ResetLinkVehicle } from '../style/styled';
+import Footer from './Footer';
 
 export default function ListaEmpresa() {
 
   const [empresas, setEmpresas] = useState([])
+  const [empresaFilter, setEmpresaFilter] = useState([])
 
     useEffect(()=>{
-      fetch("https://gs-1tdsr.herokuapp.com/rest/empresa").then((resp)=>{
+      fetch("http://localhost:8080/GsAPI/rest/empresa").then((resp)=>{
           return resp.json();
       }).then((resp)=>{
           setEmpresas(resp)
@@ -17,7 +19,7 @@ export default function ListaEmpresa() {
   },[])
 
   const handleDelete = (id)=>{
-      fetch(`https://gs-1tdsr.herokuapp.com/rest/empresa/${id}`,{
+      fetch(`http://localhost:8080/GsAPI/rest/empresa/${id}`,{
           method:"delete"
       }).then(()=>{
           window.location = "/listaempresa"
@@ -30,9 +32,21 @@ export default function ListaEmpresa() {
       <EmpresaFrame >
         <h2 >Lista de Empresas</h2>
       </EmpresaFrame>
+      
+      <InputButtonDiv>
+        <InputList type="text" placeholder="Pesquisar uma empresa..." onChange={e => { setEmpresaFilter(e.target.value) }} />
+        <ButtonBackList to="/home">Voltar</ButtonBackList>
+      </InputButtonDiv>
 
       <Divisor >
-            {empresas.map((empresa) => (
+            {
+            empresas.filter((empresa) => {
+              if(empresaFilter == "") {
+                return empresa
+              } else if (empresa.nomeEmpresa.toLowerCase().includes(empresaFilter.toLowerCase( ))) {
+                return empresa
+              }
+            }).map((empresa) => (
               <Card id="cardPessoa" key={empresa.codigo}>
               <h3>{empresa.nomeEmpresa}</h3>
               <h3>{empresa.sobreEmpresa}</h3>
@@ -42,9 +56,12 @@ export default function ListaEmpresa() {
                 <DeleteButton onClick={handleDelete.bind(this, empresa.codigo)} >Excluir</DeleteButton>
               </div>
             </Card>
-            ))}
+            ))
+            }
         
       </Divisor>
+
+      <Footer />
     </div>
   )
 }

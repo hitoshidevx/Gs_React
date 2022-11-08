@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {  ButtonBack, ButtonListVeiculo, ButtonOkVeiculo, DivForm, DivLabel, DivLabelBelow, InputsForm, VeiculoFrame } from '../style/styled';
+import Footer from './Footer';
 
 export default function CadastroVeiculo() {
 
@@ -26,7 +27,7 @@ export default function CadastroVeiculo() {
     const handleSubmit = e =>{
         e.preventDefault()
 
-        fetch(`https://gs-1tdsr.herokuapp.com/rest/veiculo/${id ? id : ""}`,{
+        fetch(`http://localhost:8080/GsAPI/rest/veiculo/${id ? id : ""}`,{
             method: metodo,
             headers:{
                 "Content-Type":"application/json"
@@ -39,7 +40,7 @@ export default function CadastroVeiculo() {
 
     useEffect(()=>{
       if(id){
-          fetch(`https://gs-1tdsr.herokuapp.com/rest/veiculo/${id}`)
+          fetch(`http://localhost:8080/GsAPI/rest/veiculo/${id}`)
           .then((resp)=>{
               return(resp.json())
           }).then(data=>{
@@ -92,6 +93,8 @@ export default function CadastroVeiculo() {
                 </div>
             </form>
         </DivForm>
+
+        <Footer />
     </div>
   )
 }

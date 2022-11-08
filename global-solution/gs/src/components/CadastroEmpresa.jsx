@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ButtonBack, ButtonListEmpresa, ButtonOkEmpresa, DivForm, DivLabel, DivLabelBelow, EmpresaFrame, InputsForm } from '../style/styled';
+import Footer from './Footer';
 
 export default function CadastroEmpresa() {
 
@@ -26,7 +27,7 @@ export default function CadastroEmpresa() {
     const handleSubmit = e =>{
         e.preventDefault()
 
-        fetch(`https://gs-1tdsr.herokuapp.com/rest/empresa/${id ? id : ""}`,{
+        fetch(`http://localhost:8080/GsAPI/rest/empresa/${id ? id : ""}`,{
             method: metodo,
             headers:{
                 "Content-Type":"application/json"
@@ -39,7 +40,7 @@ export default function CadastroEmpresa() {
 
     useEffect(()=>{
       if(id){
-          fetch(`https://gs-1tdsr.herokuapp.com/rest/empresa/${id}`)
+          fetch(`http://localhost:8080/GsAPI/rest/empresa/${id}`)
           .then((resp)=>{
               return(resp.json())
           }).then(data=>{
@@ -92,6 +93,8 @@ export default function CadastroEmpresa() {
                   </div>
               </form>
           </DivForm>
+
+          <Footer />
       </div>
   )
 }

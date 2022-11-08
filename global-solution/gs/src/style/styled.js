@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // --------------- GERAL ----------------
 
 export const UpperFrame = styled.div`
+    margin: 8px;
     padding: 40px;
     font-size: 6vh;
     color: #fff;
@@ -31,10 +32,12 @@ export const TextoFrame = styled.h2`
 export const DivForm = styled.div`
     margin-top: 5vh;
     margin-left: 12vw;
-    @media screen and (max-width: 1050px) {
+    margin-bottom: 20vh;
+    @media screen and (max-width: 1065px) {
         display: flex;
         justify-content: center;
         margin-left: 0;
+        margin-bottom: 14vh;
     }
 `
 
@@ -122,7 +125,7 @@ export const EditButton = styled(Link)`
 
 export const Chooseh3 = styled.h3`
     margin-left: 13vw;
-    margin-top: 50px;
+    margin-top: 3.5vh;
     font-size: 3vh;
     font-family: 'MontSerrat';
     color: #6B6464;
@@ -137,7 +140,7 @@ export const Chooseh3 = styled.h3`
 export const AllSignUps = styled.div`
     display: flex;
     justify-content: space-evenly;
-    marginTop: 60px;
+    margin-top: 5vh;
     @media screen and (max-width: 1050px) {
         flex-direction: column;
         align-items: center;
@@ -148,6 +151,7 @@ export const AllSignUps = styled.div`
 export const SingularSignUp = styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom: 10vh;
     @media screen and (max-width: 1050px) {
         margin-bottom: 3.5vh;
     }
@@ -190,7 +194,7 @@ export const ResetLinkVehicle = styled(ResetLink)`
 
 export const PessoaFrame = styled(UpperFrame)`
     background-color: #D96E6E;
-    @media screen and (max-width: 1050px) {
+    @media screen and (max-width: 1065px) {
         h2 {
             text-align: center;
             font-size: 5.8vh;
@@ -247,6 +251,7 @@ export const VeiculoFrame = styled(UpperFrame)`
             text-align: center;
             font-size: 5.8vh;
         }
+
     }
 `
 
@@ -265,15 +270,36 @@ export const ButtonListVeiculo = styled(ButtonBack)`
 
 // --------------- LISTAS ----------------
 
+export const InputButtonDiv = styled.div`
+    width: 100%;
+    display: flex;  
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2vw;    
+`
+
+export const ButtonBackList = styled(ButtonBack)`
+    height: 2vh;
+`
+
 export const Divisor = styled.div`
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     margin-left: 10vw;
+    margin-bottom: 7.5vh;
     @media screen and (max-width: 865px) {
         justify-content: center;
         margin-left: 0;
     }       
+`
+
+export const InputList = styled(InputsForm)`
+    width: 60%;
+    height: 6vh;
+    margin-top: 5vh;
+    margin-left: 13vw;
+    border-radius: 10px;
 `
 
 export const Card = styled.div`
@@ -286,5 +312,24 @@ export const Card = styled.div`
     font-size: 20px;
     margin-top: 8vh;
     margin-left: 80px;
-    margin-bottom: 10vh;
+    margin-bottom: 4vh;
+`
+
+// --------------- FOOTER ----------------
+export const FooterStyle = styled.footer`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5vh;
+    background-color: #c0a54c;
+    font-family: 'Montserrat';
+    color: white;
+    a { 
+        color: #546e3f;
+        text-decoration: none;
+        &:hover {
+            color: #5d8d37;
+        }
+    }
 `

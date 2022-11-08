@@ -2,7 +2,8 @@ import React from 'react';
 import person from '../images/person.jpg'
 import company from '../images/company.jpg'
 import vehicle from '../images/vehicle.jpg'
-import { AllSignUps, Chooseh3, ResetLinkCompany, ResetLinkPerson, ResetLinkVehicle, SingularSignUp, TextoFrame, UpperFrame } from '../style/styled';
+import { AllSignUps, Chooseh3, FooterStyle, ResetLinkCompany, ResetLinkPerson, ResetLinkVehicle, SingularSignUp, TextoFrame, UpperFrame } from '../style/styled';
+import Footer from './Footer';
 
 const usuario = sessionStorage.getItem("usuario-validado")
 
@@ -36,6 +37,8 @@ export default function Home() {
             </AllSignUps>
 
         </div>
+
+        <Footer />
     </div>
   )
 }
