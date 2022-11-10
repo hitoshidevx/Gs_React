@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // --------------- GERAL ----------------
 
 export const UpperFrame = styled.div`
-    margin: 8px;
     padding: 40px;
     font-size: 6vh;
     color: #fff;
@@ -14,7 +13,7 @@ export const UpperFrame = styled.div`
         margin-top : 100px;
         margin-left: 10vw;
     }
-    @media screen and (max-width: 1050px) {
+    @media screen and (max-width: 1055px) {
         h2 {
             margin-left: 0;
         }
@@ -145,6 +144,7 @@ export const AllSignUps = styled.div`
         flex-direction: column;
         align-items: center;
         margin-top: 3vh;
+        margin-bottom: 5vh;
       }
 `
 
@@ -271,11 +271,15 @@ export const ButtonListVeiculo = styled(ButtonBack)`
 // --------------- LISTAS ----------------
 
 export const InputButtonDiv = styled.div`
-    width: 100%;
+    width: 45%;
     display: flex;  
     flex-direction: row;
     align-items: center;
     margin-left: 2vw;    
+    @media screen and (max-width: 1050px) {
+        width: 60%;
+        margin-left: 16vw;
+    }  
 `
 
 export const ButtonBackList = styled(ButtonBack)`
@@ -298,7 +302,7 @@ export const InputList = styled(InputsForm)`
     width: 60%;
     height: 6vh;
     margin-top: 5vh;
-    margin-left: 13vw;
+    margin-left: 12vw;
     border-radius: 10px;
 `
 
@@ -310,9 +314,9 @@ export const Card = styled.div`
     background-color: #D9D9D9;
     color: #6B6464;
     font-size: 20px;
-    margin-top: 8vh;
+    margin-top: 6vh;
     margin-left: 80px;
-    margin-bottom: 4vh;
+    margin-bottom: 1vh;
 `
 
 // --------------- FOOTER ----------------
@@ -325,6 +329,8 @@ export const FooterStyle = styled.footer`
     background-color: #c0a54c;
     font-family: 'Montserrat';
     color: white;
+    bottom: 0;
+    position: fixed;
     a { 
         color: #546e3f;
         text-decoration: none;

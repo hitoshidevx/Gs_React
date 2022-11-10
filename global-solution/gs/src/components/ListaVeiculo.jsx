@@ -19,7 +19,7 @@ export default function ListaVeiculo() {
   },[])
 
   const handleDelete = (id)=>{
-      fetch(`https://gs-1tdsr.herokuapp.com/rest/veiculo/${id}`,{
+      fetch(`http://localhost:8080/GsAPI/rest/veiculo/${id}`,{
           method:"delete"
       }).then(()=>{
           window.location = "/listaveiculo"
